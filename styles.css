@@ -1,0 +1,186 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+:root {
+    /* Primary */
+    --moderate-violet: hsl(263, 55%, 52%);
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --white: hsl(0, 0%, 100%);
+    /* Neutral */
+    --light-gray: hsl(0, 0%, 81%);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+    /* Font */
+    --font-family: 'Barlow Semi Condensed', sans-serif;
+    --font-size: 13px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--light-grayish-blue);
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    font-weight: 500;
+}
+
+main {
+    display: grid;
+    justify-content: center;
+    gap: 1rem;
+    padding: 4rem 0;
+}
+
+@media only screen and (min-width: 375px) {
+    main {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "p1 p1"
+            "p2 p3"
+            "p4 p4"
+            "p5 p5";
+        gap: 2rem;
+        margin: 1.5rem;
+    }
+    
+    article {
+        margin: 0 !important;
+        max-width: none !important;
+    }
+
+    #post1 {
+        grid-area: p1;
+    }
+    
+    #post2 {
+        grid-area: p2;
+    }
+    
+    #post3 {
+        grid-area: p3;
+    }
+    
+    #post4 {
+        grid-area: p4;
+    }
+    
+    #post5 {
+        grid-area: p5;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    main {
+        grid-template-columns: repeat(4, 280px);
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "p1 p1 p2 p5"
+            "p3 p4 p4 p5";
+        margin: 1.5rem;
+    }
+}
+
+article {
+    margin: 0 1.5rem 0.5rem;
+    border-radius: 1rem;
+    padding: 2rem;
+    z-index: -1;
+    position: relative;
+    box-shadow: 8px 8px 30px -8px rgba(0,0,0,0.51);
+    -webkit-box-shadow: 8px 8px 30px -8px rgba(0,0,0,0.51);
+    -moz-box-shadow: 8px 8px 30px -8px rgba(0,0,0,0.51);
+    max-width: 320px;
+}
+
+.quotation-svg {
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    right: 10%;
+}
+
+/* Header */
+header {
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.avatar img {
+    width: 2rem;
+    height: auto;
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+.post-main h1 {
+    margin-bottom: 1rem;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* Review paragraphs inside the quotations */
+p {
+    color: var(--white);
+    opacity: 70%;
+}
+
+.user-name {
+    font-weight: 600;
+}
+
+/* "Verified Graduate" */
+.user-status {
+    opacity: 50%;
+}
+
+/* Article */
+.post-violet {
+    background-color: var(--moderate-violet);
+}
+
+.post-gray {
+    background-color: var(--very-dark-grayish-blue);
+}
+
+.post-white {
+    background-color: var(--white);
+}
+
+.post-blue {
+    background-color: var(--very-dark-blackish-blue);
+}
+
+.post-violet header .user-name, 
+.post-violet .post-main h1,
+.post-gray header .user-name,
+.post-gray .post-main h1,
+.post-blue header .user-name,
+.post-blue .post-main h1 {
+    color: var(--white);
+}
+
+.post-white header .user-name,
+.post-white .post-main h1,
+.post-white header .user-status,
+.post-white .post-main p {
+    color: var(--very-dark-blackish-blue);
+}
+
+
+/* Footer */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    color: var(--very-dark-blackish-blue);
+}
+
+.attribution a {
+    color: var(--moderate-violet);
+}
